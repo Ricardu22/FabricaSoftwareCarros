@@ -11,18 +11,16 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Cliente {
+public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(length = 600)
     private String nome;
+    private String modelo;
     @Temporal(value = TemporalType.DATE)
-    private Date dataNascimento;
-    private String endereco;
-    private String telefone;
-    private String email;
-
+    private Date ano;
+    private String marca;
     public long getId() {
         return id;
     }
@@ -35,28 +33,22 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public String getModelo() {
+        return modelo;
     }
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
-    public String getEndereco() {
-        return endereco;
+    public Date getAno() {
+        return ano;
     }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setAno(Date ano) {
+        this.ano = ano;
     }
-    public String getTelefone() {
-        return telefone;
+    public String getMarca() {
+        return marca;
     }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 }
