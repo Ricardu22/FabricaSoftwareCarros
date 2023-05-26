@@ -7,41 +7,52 @@
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
         <main class="container">
+
             <form th:action="@{/cliente/(form)}"
                 method="POST"
                 th:object="${cliente}">
 
                 <input type="hidden" th:field="*{id}">
-                
-                <div class="form-group">
+
+                <div class="form=group">
                     <label for="txtNome">Nome</label>
                     <input type="text" class="form-control"
-                        th:field="*{nome}" id="txtNome">
+                    th:field="*{nome}" id="txtNome">
+
                 </div>
-        
+
                 <div class="form-group">
                     <label for="txtData">Data de Nascimento</label>
                     <input type="date" class="form-control"
                         th:field="*{dataNascimento}" id="txtData">
                 </div>
+            
 
-                <div class="form-group">
-                    <label for="txtEndereco">Endereço</label>
-                    <input type="text" class="form-control"
-                        th:field="*{endereco}" id="txtEndereco">
-                </div>
+            <div class="form-group">
+                <label for="txtEndereco">Endereço</label>
+                <input type="text" class="form-control"
+                    th:field="*{endereco}" id="txtEndereco">
+            </div>
 
-                <div class="form-group">
-                    <label for="txtTelefone">Telefone</label>
-                    <input type="text" class="form-control"
-                        th:field="*{telefone}" id="txtTelefone">
-                </div>
+            <div class="form-group">
+                <label for="txtCidade">Cidade</label>
+                <input type="text" class="form-control"
+                    th:field="*{cidade}" id="txtCidade">
+            </div>
 
-                <div class="form-group">
-                    <label for="txtEmail">Email</label>
-                    <input type="text" class="form-control"
-                        th:field="*{email}" id="txtEmail">
-                </div>
+            <div class="form-group">
+                <label for="txtTelefone">Telefone</label>
+                <input type="number" class="form-control"
+                    th:field="*{telefone}" id="txtTelefone">
+            </div>
+
+            <div class="form-group">
+                <label for="txtEmail">Email</label>
+                <input type="text" class="form-control"
+                    th:field="*{email}" id="txtEmail">
+            </div>
+
+                
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">
@@ -50,6 +61,7 @@
                 </div>
 
             </form>
+
         </main>
         <div th:include="layout :: footer">(footer)</div>
     </body>

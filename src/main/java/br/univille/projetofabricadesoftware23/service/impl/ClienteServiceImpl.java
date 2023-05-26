@@ -22,12 +22,14 @@ public class ClienteServiceImpl
     }
 
     @Override
-    public void save(Cliente cliente){
+    public void save(Cliente cliente) {
         repository.save(cliente);
     }
 
     @Override
     public void delete(long id) {
         repository.deleteById(id);
+    
     }
+
 }
